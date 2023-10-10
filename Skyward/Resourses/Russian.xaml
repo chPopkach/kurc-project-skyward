@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:s="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <s:String x:Key="changeLanguage_button" xml:space="preserve">Изменить язык</s:String>
+    <s:String x:Key="auth_button" xml:space="preserve">Войти</s:String>
+    <s:String x:Key="login_label" xml:space="preserve">Логин</s:String>
+    <s:String x:Key="password_label" xml:space="preserve">Пароль</s:String>
+
+    <s:String x:Key="reset_button" xml:space="preserve">Сброс</s:String>
+    <s:String x:Key="otbor_button" xml:space="preserve">Отбор</s:String>
+    <s:String x:Key="all_button" xml:space="preserve">Все</s:String>
+    <s:String x:Key="logOut_button" xml:space="preserve">Выход</s:String>
+    <s:String x:Key="insert_button" xml:space="preserve">Добавить клиента</s:String>
+    <s:String x:Key="GenerateAReport_button" xml:space="preserve">Сформировать отчет</s:String>
+    <s:String x:Key="change_button" xml:space="preserve">Изменить расписание</s:String>
+    <s:String x:Key="allConsultants_button" xml:space="preserve">Консультанты</s:String>
+    <s:String x:Key="allTrainers_button" xml:space="preserve">Тренера</s:String>
+    <s:String x:Key="allTickets_button" xml:space="preserve">Абонементы</s:String>
+    <s:String x:Key="search_label" xml:space="preserve">Поиск:</s:String>
+    <s:String x:Key="firstName_dataGridTextColumn" xml:space="preserve">Фамилия</s:String>
+    <s:String x:Key="name_dataGridTextColumn" xml:space="preserve">Имя</s:String>
+    <s:String x:Key="lastName_dataGridTextColumn" xml:space="preserve">Отчество</s:String>
+    <s:String x:Key="phone_dataGridTextColumn" xml:space="preserve">Телефон</s:String>
+    <s:String x:Key="age_dataGridTextColumn" xml:space="preserve">Возраст</s:String>
+    <s:String x:Key="freeFrom_label" xml:space="preserve">Свободен с </s:String>
+    <s:String x:Key="to_label" xml:space="preserve"> до </s:String>
+    <s:String x:Key="trainingDays_label" xml:space="preserve">Дни тренировок: </s:String>
+
+    <s:String x:Key="male_label" xml:space="preserve">Пол: </s:String>
+    <s:String x:Key="time_label" xml:space="preserve">Время: </s:String>
+    <s:String x:Key="typeTicket_label" xml:space="preserve">Тип абонемента: </s:String>
+
+    <s:String x:Key="delay_dataGridTextColumn" xml:space="preserve">Период</s:String>
+    <s:String x:Key="price_dataGridTextColumn" xml:space="preserve">Цена</s:String>
+</ResourceDictionary>

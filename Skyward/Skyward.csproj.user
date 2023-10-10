@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Tools\ToolBarWindows.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ConsultantWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FormAddClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FormChangeSchedule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TrainerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewAllTypesTicketsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Resourses\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resourses\English.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resourses\Russian.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Tools\ToolBarWindows.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ConsultantWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormAddClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormChangeSchedule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TrainerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewAllTypesTicketsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

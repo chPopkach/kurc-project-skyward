@@ -1,0 +1,25 @@
+﻿<Window x:Class="Skyward.Views.ViewAllTypesTicketsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skyward.Views"
+        mc:Ignorable="d"
+        Title="" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.ColumnSpan="3"></Grid>
+        <DataGrid Margin="10" Grid.Row="2" Grid.Column="0" Name="Typetickets_table" ScrollViewer.CanContentScroll="True" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" RowBackground="LightGray" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource delay_dataGridTextColumn}" Binding="{Binding type_ticket}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource price_dataGridTextColumn}" Binding="{Binding price}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

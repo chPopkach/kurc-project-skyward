@@ -1,0 +1,89 @@
+﻿<Window x:Class="Skyward.Views.ConsultantWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skyward.Views"
+        mc:Ignorable="d"
+        Title="" MinHeight="600" MinWidth="800" Height="600" Width="800" MaxHeight="1080" MaxWidth="1920" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.ColumnSpan="3"></Grid>
+        <DataGrid Margin="10,0,0,10" Grid.Row="2" Grid.Column="0" Name="Humens_table" ScrollViewer.CanContentScroll="True" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" ItemsSource="{Binding Humens}" SelectedItem="{Binding Humen, Mode=TwoWay}" RowBackground="LightGray" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource firstName_dataGridTextColumn}" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource name_dataGridTextColumn}" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource lastName_dataGridTextColumn}" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource phone_dataGridTextColumn}" Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource age_dataGridTextColumn}" Binding="{Binding Age}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <ListBox ItemsSource="{Binding ScheduleHumens}" Background="LightGray">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Background="LightGray">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="35"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Background="LightGray">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Foreground="Black" Content="{DynamicResource freeFrom_label}" Grid.Column="0"></Label>
+                                        <TextBlock Foreground="Black" Text="{Binding Schedule.WorkTimeStart, StringFormat=HH:mm}" Grid.Column="1"/>
+                                        <Label Foreground="Black" Content="{DynamicResource to_label}" Grid.Column="2"></Label>
+                                        <TextBlock Foreground="Black" Text="{Binding Schedule.WorkTimeEnd, StringFormat=HH:mm}" Grid.Column="3"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Background="LightGray">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Foreground="Black" Content="{DynamicResource trainingDays_label}" Grid.Column="0"></Label>
+                                        <TextBlock Foreground="Black" Text="{Binding Schedule.WorkDays}" Grid.Column="1"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Label Grid.Row="1" Content="{DynamicResource search_label}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="DynamicSearchTextBoxConsultantWindowViewModel" Grid.Column="0" Grid.Row="1" TextChanged="TextBox_TextChanged" Text="" FontSize="18" Margin="340,10,10,10" Width="250" Height="30"/>
+        <TextBlock IsHitTestVisible="False" Text="Иван Иванович" Height="30" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left" Width="250" Margin="345,0,0,0" Foreground="DarkGray">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=DynamicSearchTextBoxConsultantWindowViewModel}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button Grid.Row="1" Content="{DynamicResource reset_button}" HorizontalAlignment="Left" Margin="10,0,0,0" Command="{Binding StartView}"></Button>
+        <Button Grid.Row="1" Content="{DynamicResource all_button}" HorizontalAlignment="Left" Margin="140,0,0,0" Command="{Binding AllClientsView}"></Button>
+        <Button Grid.Row="1" Content="{DynamicResource logOut_button}" Grid.Column="1" HorizontalAlignment="Center" Command="{Binding TerminateSession}"></Button>
+        <Button Grid.Row="2" Content="{DynamicResource insert_button}" Width="Auto" Grid.Column="1" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding OpenFormAddClient}"></Button>
+        <Button Grid.Row="2" Content="{DynamicResource change_button}" Width="Auto" Grid.Column="1" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding OpenFormChangeSchedule}"></Button>
+        <Button Grid.Row="2" Content="{DynamicResource GenerateAReport_button}" Width="Auto" Grid.Column="1" Margin="0,110,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding GenerateAReport}"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="{DynamicResource allConsultants_button}" Margin="0,0,0,110" HorizontalAlignment="Center" VerticalAlignment="Bottom" Command="{Binding AllConsultantsView}"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="{DynamicResource allTrainers_button}" Margin="0,0,0,60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Command="{Binding AllTrainersView}"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="{DynamicResource allTickets_button}" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Command="{Binding AllTypesTickets}"></Button>
+    </Grid>
+</Window>
